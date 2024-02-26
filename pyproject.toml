@@ -1,0 +1,17 @@
+[project]
+name = "movie-buddy"
+version = "0.1.0"
+description = "Your AI-powered movie buddy"
+authors = [
+    {name = "baggiponte", email = "57922983+baggiponte@users.noreply.github.com"},
+]
+requires-python = "==3.11.*"
+readme = "README.md"
+license = {text = "MIT"}
+dependencies = [
+    "qdrant-client>=1.7.3",
+    "openai>=1.12.0",
+]
+
+[project.scripts]
+buddy = "movie_buddy.cli:main"
