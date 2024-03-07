@@ -1,5 +1,13 @@
 # Your AI-Powered Movies Buddy
 
+## 🚀 Let's get started!
+
+**name** | **open in**
+:-----: | :-------:
+[Explore Embeddings](./notebooks/01-embeddings.ipynb) | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/xtreamsrl/movies-buddy/blob/main/notebooks/01-embeddings.ipynb) [![Kaggle](https://kaggle.com/static/images/open-in-kaggle.svg)](https://kaggle.com/kernels/welcome?src=https://github.com/xtreamsrl/movies-buddy/blob/main/notebooks/01-embeddings.ipynb) [![SageMaker](https://raw.githubusercontent.com/roboflow-ai/notebooks/main/assets/badges/sage-maker.svg)](https://studiolab.sagemaker.aws/import/github/xtreamsrl/movies-buddy/blob/main/notebooks/01-embeddings.ipynb)
+[What are Vector Databases?](./notebooks/02-vector-database.ipynb) | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/xtreamsrl/movies-buddy/blob/main/notebooks/02-vector-database.ipynb) [![Kaggle](https://kaggle.com/static/images/open-in-kaggle.svg)](https://kaggle.com/kernels/welcome?src=https://github.com/xtreamsrl/movies-buddy/blob/main/notebooks/02-vector-database.ipynb) [![SageMaker](https://raw.githubusercontent.com/roboflow-ai/notebooks/main/assets/badges/sage-maker.svg)](https://studiolab.sagemaker.aws/import/github/xtreamsrl/movies-buddy/blob/main/notebooks/02-vector-database.ipynb)
+[Explore Embeddings](./notebooks/03-rag-from-scratch.ipynb) | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/xtreamsrl/movies-buddy/blob/main/notebooks/03-rag-from-scratch.ipynb) [![Kaggle](https://kaggle.com/static/images/open-in-kaggle.svg)](https://kaggle.com/kernels/welcome?src=https://github.com/xtreamsrl/movies-buddy/blob/main/notebooks/03-rag-from-scratch.ipynb) [![SageMaker](https://raw.githubusercontent.com/roboflow-ai/notebooks/main/assets/badges/sage-maker.svg)](https://studiolab.sagemaker.aws/import/github/xtreamsrl/movies-buddy/blob/main/notebooks/03-rag-from-scratch.ipynb)
+
 ## 🤗 How to contribute
 
 1. Clone the repo:
@@ -18,7 +26,10 @@ gh repo clone xtreamsrl/movies-buddy
 2. Run the following:
 
 ```bash
-pdm install --group=:dev
+pdm install --group=dev
+
+# if you need jupyter notebooks
+pdm install --group=dev --group=ide
 ```
 
 3. Check if everything works:
