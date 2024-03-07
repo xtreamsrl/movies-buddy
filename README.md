@@ -26,7 +26,10 @@ gh repo clone xtreamsrl/movies-buddy
 2. Run the following:
 
 ```bash
-pdm install --group=:dev
+pdm install --group=dev
+
+# if you need jupyter notebooks
+pdm install --group=dev --group=ide
 ```
 
 3. Check if everything works:
