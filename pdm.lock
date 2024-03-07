@@ -886,7 +886,7 @@ files = [
 
 [[package]]
 name = "jupyterlab"
-version = "4.1.2"
+version = "4.1.4"
 requires_python = ">=3.8"
 summary = "JupyterLab computational environment"
 groups = ["ide"]
@@ -905,8 +905,8 @@ dependencies = [
     "traitlets",
 ]
 files = [
-    {file = "jupyterlab-4.1.2-py3-none-any.whl", hash = "sha256:aa88193f03cf4d3555f6712f04d74112b5eb85edd7d222c588c7603a26d33c5b"},
-    {file = "jupyterlab-4.1.2.tar.gz", hash = "sha256:5d6348b3ed4085181499f621b7dfb6eb0b1f57f3586857aadfc8e3bf4c4885f9"},
+    {file = "jupyterlab-4.1.4-py3-none-any.whl", hash = "sha256:f92c3f2b12b88efcf767205f49be9b2f86b85544f9c4f342bb5e9904a16cf931"},
+    {file = "jupyterlab-4.1.4.tar.gz", hash = "sha256:e03c82c124ad8a0892e498b9dde79c50868b2c267819aca3f55ce47c57ebeb1d"},
 ]
 
 [[package]]
@@ -1342,7 +1342,7 @@ files = [
 
 [[package]]
 name = "openai"
-version = "1.12.0"
+version = "1.13.3"
 requires_python = ">=3.7.1"
 summary = "The official Python library for the openai API"
 groups = ["default"]
@@ -1356,8 +1356,8 @@ dependencies = [
     "typing-extensions<5,>=4.7",
 ]
 files = [
-    {file = "openai-1.12.0-py3-none-any.whl", hash = "sha256:a54002c814e05222e413664f651b5916714e4700d041d5cf5724d3ae1a3e3481"},
-    {file = "openai-1.12.0.tar.gz", hash = "sha256:99c5d257d09ea6533d689d1cc77caa0ac679fa21efef8893d8b0832a86877f1b"},
+    {file = "openai-1.13.3-py3-none-any.whl", hash = "sha256:5769b62abd02f350a8dd1a3a242d8972c947860654466171d60fb0972ae0a41c"},
+    {file = "openai-1.13.3.tar.gz", hash = "sha256:ff6c6b3bc7327e715e4b3592a923a5a1c7519ff5dd764a83d69f633d49e77a7b"},
 ]
 
 [[package]]
@@ -1832,7 +1832,7 @@ files = [
 
 [[package]]
 name = "qdrant-client"
-version = "1.7.3"
+version = "1.8.0"
 requires_python = ">=3.8"
 summary = "Client library for the Qdrant vector search engine"
 groups = ["default"]
@@ -1846,8 +1846,8 @@ dependencies = [
     "urllib3<3,>=1.26.14",
 ]
 files = [
-    {file = "qdrant_client-1.7.3-py3-none-any.whl", hash = "sha256:b062420ba55eb847652c7d2a26404fb1986bea13aa785763024013f96a7a915c"},
-    {file = "qdrant_client-1.7.3.tar.gz", hash = "sha256:7b809be892cdc5137ae80ea3335da40c06499ad0b0072b5abc6bad79da1d29fc"},
+    {file = "qdrant_client-1.8.0-py3-none-any.whl", hash = "sha256:fa28d3eb64c0c57ec029c7c85c71f6c72c197f92502022655741f3632c518e29"},
+    {file = "qdrant_client-1.8.0.tar.gz", hash = "sha256:2a1a3f2cbacc7adba85644cf6cfdee20401cf25764b32da479c81fb63e178d15"},
 ]
 
 [[package]]
@@ -2090,7 +2090,7 @@ files = [
 
 [[package]]
 name = "sentence-transformers"
-version = "2.4.0"
+version = "2.5.1"
 requires_python = ">=3.8.0"
 summary = "Multilingual text embeddings"
 groups = ["default"]
@@ -2105,8 +2105,8 @@ dependencies = [
     "transformers<5.0.0,>=4.32.0",
 ]
 files = [
-    {file = "sentence-transformers-2.4.0.tar.gz", hash = "sha256:5134d3d8d1c55bab9e99599cfc90c6c18bc298f7dcba94f2095d47950e32c88b"},
-    {file = "sentence_transformers-2.4.0-py3-none-any.whl", hash = "sha256:e14d70b5a1a01ac0fe9ddef7131afa10791e1b96edf52400cfb8f3176dd1e115"},
+    {file = "sentence-transformers-2.5.1.tar.gz", hash = "sha256:754bf2b2623eb46904fd9c72ff89a0f90200fe141a8d45b03e83bc6d51718153"},
+    {file = "sentence_transformers-2.5.1-py3-none-any.whl", hash = "sha256:f12346f7fca06ed1198d24235cb9114a74665506f7c30044e0a6f12de7eeeb77"},
 ]
 
 [[package]]
