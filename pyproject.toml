@@ -9,17 +9,14 @@ requires-python = "==3.11.*"
 readme = "README.md"
 license = {text = "MIT"}
 dependencies = [
-    "qdrant-client>=1.7.3",
+    "ipywidgets>=8.1.2",
     "openai>=1.12.0",
+    "pandas>=2.2.1",
+    "plotly>=5.19.0",
+    "qdrant-client>=1.7.3",
     "sentence-transformers>=2.4.0",
     "umap-learn>=0.5.5",
-    "plotly>=5.19.0",
-    "pandas>=2.2.1",
-    "ipywidgets>=8.1.2",
 ]
-
-[project.scripts]
-buddy = "movie_buddy.cli:main"
 
 [project.optional-dependencies]
 dev = [
