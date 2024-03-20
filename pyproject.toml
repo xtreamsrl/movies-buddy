@@ -25,4 +25,5 @@ dev = [
 ]
 ide = [
     "jupyterlab>=4.1.2",
+    "catppuccin-jupyterlab>=0.2.0"
 ]
