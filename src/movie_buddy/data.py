@@ -4,18 +4,14 @@ from ast import literal_eval
 
 def get_movies_dataset() -> pd.DataFrame:
     source = "https://raw.githubusercontent.com/xtreamsrl/movies-buddy/main/data/movies_metadata.csv"
-    original_movies_data_df = pd.read_csv(source, low_memory=False)
+    raw = pd.read_csv(source, low_memory=False)
 
     columns = ["id", "title", "overview", "release_date", "runtime", "genres"]
-    movies_df = original_movies_data_df[columns].dropna()
+    movies = raw[columns].dropna().loc[lambda df: df["genres"].str.len() > 0]
 
-    movies_df["genres"] = movies_df["genres"].apply(literal_eval)
-    movies_df = movies_df[movies_df["genres"].str.len() > 0]
-    movies_df["genre"] = movies_df["genres"].apply(lambda i: i[0]["name"])
+    movies["genre"] = movies["genres"].apply(literal_eval).str.get(0).str.get("name")
 
-    movies_df = movies_df.drop(columns=["genres"], axis=0)
-
-    return movies_df
+    return movies.drop(columns=["genres"], axis=0)
 
 
 def get_sentences_dataset() -> pd.DataFrame:
