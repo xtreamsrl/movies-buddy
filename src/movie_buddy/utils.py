@@ -4,7 +4,7 @@ import umap
 import plotly.express as px
 
 
-def add_sentences(data: pd.DataFrame, sentences: list[str], encoder) -> pd.DataFrame:
+def add_sentences(data: pd.DataFrame, sentences: list[str], *, encoder) -> pd.DataFrame:
     sentences_ = pd.DataFrame(sentences, columns=["sentences"]).assign(
         short_sentences=lambda df: df["sentences"].str.slice(0, 20) + "...",
         field="MINE",
@@ -17,6 +17,32 @@ def add_sentences(data: pd.DataFrame, sentences: list[str], encoder) -> pd.DataF
     reduced_encodings = reduce_dimensions(encodings)
 
     return add_umap_to_dataset(all_sentences, reduced_encodings)
+
+
+def plot_movies(data: pd.DataFrame, *, sample: int = 5000) -> None:
+    fig = px.scatter(
+        data,
+        x="x",
+        y="y",
+        color="genre",
+        height=512,
+        hover_name="genre",
+        hover_data={
+            "overview": False,
+            "title": True,
+            "x": False,
+            "y": False,
+        },
+    )
+
+    (
+        fig.update_layout(
+            title_text="Which genres are close together?",
+            template="plotly_white",
+        )
+        .update_traces(textposition="top center", marker=dict(size=15))
+        .show()
+    )
 
 
 def plot_sentences(sentences: pd.DataFrame) -> None:
@@ -38,9 +64,15 @@ def plot_sentences(sentences: pd.DataFrame) -> None:
             "short_sentences": False,
         },
     )
-    fig.update_layout(title_text="Which vectors are close?", template="plotly_white")
-    fig.update_traces(textposition="top center", marker=dict(size=15))
-    fig.show()
+
+    (
+        fig.update_layout(
+            title_text="Which vectors are close together?",
+            template="plotly_white",
+        )
+        .update_traces(textposition="top center", marker=dict(size=15))
+        .show()
+    )
 
 
 def reduce_dimensions(vectors: np.array) -> np.array:
