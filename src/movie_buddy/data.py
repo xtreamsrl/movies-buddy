@@ -1,8 +1,11 @@
 import pandas as pd
 
 
-def get_movies_dataset() -> pd.DataFrame:
+def get_movies_dataset(sample: int = 0) -> pd.DataFrame:
     source = "https://raw.githubusercontent.com/xtreamsrl/movies-buddy/main/data/movies.parquet"
+
+    if sample:
+        return pd.read_parquet(source).sample(sample)
     return pd.read_parquet(source)
 
 
