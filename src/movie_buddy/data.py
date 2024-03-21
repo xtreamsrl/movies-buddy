@@ -1,17 +1,9 @@
 import pandas as pd
-from ast import literal_eval
 
 
 def get_movies_dataset() -> pd.DataFrame:
-    source = "https://raw.githubusercontent.com/xtreamsrl/movies-buddy/main/data/movies_metadata.csv"
-    raw = pd.read_csv(source, low_memory=False)
-
-    columns = ["id", "title", "overview", "release_date", "runtime", "genres"]
-    movies = raw[columns].dropna().loc[lambda df: df["genres"].str.len() > 0]
-
-    movies["genre"] = movies["genres"].apply(literal_eval).str.get(0).str.get("name")
-
-    return movies.drop(columns=["genres"], axis=0)
+    source = "https://raw.githubusercontent.com/xtreamsrl/movies-buddy/main/data/movies.parquet"
+    return pd.read_parquet(source)
 
 
 def get_sentences_dataset() -> pd.DataFrame:
