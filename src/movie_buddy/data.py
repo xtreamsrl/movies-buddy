@@ -1,8 +1,14 @@
 import pandas as pd
 
+from pathlib import Path
 
-def get_movies_dataset(sample: int = 0) -> pd.DataFrame:
-    source = "https://raw.githubusercontent.com/xtreamsrl/movies-buddy/main/data/movies.parquet"
+
+def get_movies_dataset(sample: int = 0, *, local: bool = False) -> pd.DataFrame:
+    if local:
+        here = Path(__file__)
+        source = here.parent.parent.parent / "data/movies.parquet"
+    else:
+        source = "https://raw.githubusercontent.com/xtreamsrl/movies-buddy/main/data/movies.parquet"
 
     if sample:
         return pd.read_parquet(source).sample(sample)
