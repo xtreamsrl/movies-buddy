@@ -1,6 +1,8 @@
 import pandas as pd
+import numpy as np
 
 from pathlib import Path
+import numpy.typing as npt
 
 
 def get_movies_dataset(sample: int = 0, *, local: bool = False) -> pd.DataFrame:
@@ -13,6 +15,16 @@ def get_movies_dataset(sample: int = 0, *, local: bool = False) -> pd.DataFrame:
     if sample:
         return pd.read_parquet(source).sample(sample)
     return pd.read_parquet(source)
+
+
+def get_embeddings(*, local: bool = False) -> npt.NDArray:
+    if local:
+        here = Path(__file__)
+        source = here.parent.parent.parent / "data/movies_embeddings.npy"
+    else:
+        source = "https://raw.githubusercontent.com/xtreamsrl/movies-buddy/main/data/movies_embeddings.npy"
+
+    return np.load(source)
 
 
 def get_sentences_dataset() -> pd.DataFrame:
