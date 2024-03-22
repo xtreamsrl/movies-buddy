@@ -40,7 +40,7 @@ def plot_movies(data: pd.DataFrame, *, sample: int = 5000) -> None:
             title_text="Which genres are close together?",
             template="plotly_white",
         )
-        .update_traces(textposition="top center", marker=dict(size=15))
+        .update_traces(textposition="top center", marker=dict(size=5))
         .show()
     )
 
