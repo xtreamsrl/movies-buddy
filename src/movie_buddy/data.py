@@ -1,3 +1,5 @@
+import requests
+import io
 import pandas as pd
 import numpy as np
 
@@ -136,10 +138,11 @@ def get_embeddings(*, local: bool = False) -> npt.NDArray:
     if local:
         here = Path(__file__)
         source = here.parent.parent.parent / "data/movies_embeddings.npy"
+        return np.load(source)
     else:
-        source = "https://raw.githubusercontent.com/xtreamsrl/movies-buddy/main/data/movies_embeddings.npy"
-
-    return np.load(source)
+        url = "https://raw.githubusercontent.com/xtreamsrl/movies-buddy/main/data/movies_embeddings.npy"
+        response = requests.get(url)
+        return np.load(io.BytesIO(response.content))
 
 
 def get_sentences_dataset() -> pd.DataFrame:
