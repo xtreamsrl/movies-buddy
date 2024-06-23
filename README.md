@@ -13,7 +13,7 @@
 1. Clone the repo.
 
 > [!NOTE]
-> The project uses Python 3.12
+> The project uses Python 3.10
 
 2. Install Poetry, following the official docs: https://python-poetry.org/docs/#installation
 
