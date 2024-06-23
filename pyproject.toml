@@ -1,36 +1,28 @@
-[project]
-name = "movie-buddy"
+[tool.poetry]
+name = "movies-buddy"
 version = "0.1.0"
-description = "Your AI-powered movie buddy"
-authors = [
-    {name = "baggiponte", email = "57922983+baggiponte@users.noreply.github.com"},
-]
-requires-python = "==3.10.*"
+description = ""
+authors = ["Luca Baggi <luca.baggi@xtreamers.io>"]
 readme = "README.md"
-license = {text = "MIT"}
-dependencies = [
-    "ipywidgets>=8.1.2",
-    "openai>=1.12.0",
-    "pandas[pyarrow]>=2.2.1",
-    "plotly>=5.19.0",
-    "qdrant-client>=1.7.3",
-    "sentence-transformers>=2.4.0",
-    "umap-learn>=0.5.5",
+packages = [
+    { include = "movie_buddy", from = "src" },
 ]
 
-[project.optional-dependencies]
-dev = [
-    "pre-commit>=3.6.2",
-    "nbstripout>=0.7.1",
-]
-ide = [
-    "jupyterlab>=4.1.2",
-    "catppuccin-jupyterlab>=0.2.0"
-]
+[tool.poetry.dependencies]
+python = "^3.12"
+sentence-transformers = "^3.0.1"
+pandas = { version = "^2.2.2", extras = ["pyarrow"] }
+tqdm = "^4.66.4"
+plotly = "^5.22.0"
+umap-learn = "^0.5.6"
+qdrant-client = "^1.9.2"
+openai = "^1.35.3"
 
-[tool.pyright]
-exclude = [
-  ".venv"
-]
-venvPath = "."
-venv = ".venv"
+
+[tool.poetry.group.ide.dependencies]
+jupyterlab = "^4.2.2"
+ipywidgets = "^8.1.3"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
