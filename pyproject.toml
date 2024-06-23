@@ -11,13 +11,12 @@ packages = [
 [tool.poetry.dependencies]
 python = "^3.10"
 sentence-transformers = "^3.0.1"
-pandas = { version = "<=2.2.1", extras = ["pyarrow"] }
+pandas = { version = "^2.2.2", extras = ["pyarrow"] }
 tqdm = "^4.66.4"
 plotly = "^5.22.0"
 umap-learn = "^0.5.6"
 qdrant-client = "^1.9.2"
 openai = "^1.35.3"
-protobuf = "<5.0.0"
 
 
 [tool.poetry.group.ide.dependencies]
