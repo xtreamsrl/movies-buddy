@@ -10,37 +10,22 @@
 
 ## 🤗 How to contribute
 
-1. Clone the repo:
-
-```bash
-git clone git@github.com:xtreamsrl/movies-buddy
-
-gh repo clone xtreamsrl/movies-buddy
-```
+1. Clone the repo.
 
 > [!NOTE]
-> The project uses Python 3.11
+> The project uses Python 3.10
 
-1. Install PDM
+2. Install Poetry, following the official docs: https://python-poetry.org/docs/#installation
 
-2. Run the following:
+3. Run the following:
 
 ```bash
-pdm install --group=dev
-
-# if you need jupyter notebooks
-pdm install --group=dev --group=ide
+poetry install
 ```
 
-3. Check if everything works:
+4. It is highly recommended to use `nbstripout` to avoid pushing the output of jupyter notebooks.
+   Install it with:
 
 ```bash
-pdm run python -c "from movies_buddy import version; print(version.__version__)"
-```
-
-4. Install `pre-commit` and `nbstripout` hooks:
-
-```bash
-pdm run pre-commit install --install-hooks
-pdm run nbstripout --install
+pre-commit install
 ```

@@ -1,7 +1,8 @@
 import numpy as np
 import pandas as pd
-import umap
 import plotly.express as px
+import plotly.graph_objs
+import umap
 
 
 def add_sentences(data: pd.DataFrame, sentences: list[str], *, encoder) -> pd.DataFrame:
@@ -19,7 +20,7 @@ def add_sentences(data: pd.DataFrame, sentences: list[str], *, encoder) -> pd.Da
     return add_umap_to_dataset(all_sentences, reduced_encodings)
 
 
-def plot_movies(data: pd.DataFrame, *, sample: int = 5000) -> None:
+def plot_movies(data: pd.DataFrame) -> plotly.graph_objs.Figure:
     fig = px.scatter(
         data,
         x="x",
@@ -33,19 +34,18 @@ def plot_movies(data: pd.DataFrame, *, sample: int = 5000) -> None:
             "x": False,
             "y": False,
         },
+    ).update_layout(
+        title_text="Which genres are close together?",
+        template="plotly_white",
+    ).update_traces(
+        textposition="top center",
+        marker=dict(size=5)
     )
 
-    (
-        fig.update_layout(
-            title_text="Which genres are close together?",
-            template="plotly_white",
-        )
-        .update_traces(textposition="top center", marker=dict(size=5))
-        .show()
-    )
+    return fig
 
 
-def plot_sentences(sentences: pd.DataFrame) -> None:
+def plot_sentences(sentences: pd.DataFrame) -> plotly.graph_objs.Figure:
     sentences["short_sentences"] = sentences["sentences"].str.slice(0, 20) + "..."
 
     fig = px.scatter(
@@ -63,16 +63,15 @@ def plot_sentences(sentences: pd.DataFrame) -> None:
             "field": False,
             "short_sentences": False,
         },
+    ).update_layout(
+        title_text="Which vectors are close together?",
+        template="plotly_white",
+    ).update_traces(
+        textposition="top center",
+        marker=dict(size=15)
     )
 
-    (
-        fig.update_layout(
-            title_text="Which vectors are close together?",
-            template="plotly_white",
-        )
-        .update_traces(textposition="top center", marker=dict(size=15))
-        .show()
-    )
+    return fig
 
 
 def reduce_dimensions(vectors: np.array) -> np.array:
